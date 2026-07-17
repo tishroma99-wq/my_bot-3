@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ['web/**']
+  workflow_dispatch:
 permissions:
   contents: read
   pages: write
@@ -16,11 +16,9 @@ jobs:
         with:
           node-version: 20
       - run: npm ci
-        working-directory: web
       - run: npm run build
-        working-directory: web
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: web/dist
+          path: dist
       - id: deployment
         uses: actions/deploy-pages@v4
