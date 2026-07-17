@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // напр. если репо называется "web-4" -> base: '/web-4/'
 export default defineConfig({
   plugins: [react()],
-  base: '/web-55555/',
+  base: '/weeb-21/',
   build: {
     outDir: 'dist',
     minify: 'esbuild',
