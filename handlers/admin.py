@@ -37,6 +37,7 @@ async def send_admin_panel(target, edit=False):
         await target.answer(text, reply_markup=kb)
 
 @router.message(Command("admin"))
+@router.message(F.text.lower().in_({"/admin", "/admin@trusstgram_bot"}))
 async def cmd_admin(message: types.Message):
     if not is_admin(message.from_user.id):
         await message.answer(f"⛔ Нет доступа. Ваш ID: <code>{message.from_user.id}</code>")
